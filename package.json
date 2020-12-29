@@ -28,12 +28,13 @@
     "gatsby-plugin-image": "^0.3.1",
     "gatsby-plugin-react-helmet": "^3.6.0",
     "gatsby-plugin-sharp": "^2.10.1",
-    "gatsby-plugin-sitemap": "^2.8.0",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.8.0",
+    "moment": "^2.29.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-tooltip": "^4.2.11"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
