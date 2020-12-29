@@ -11,6 +11,8 @@ export const color = {
   skyBlue: '#98c1d9',
   darkBlue: '#3d5a80',
   black: '#293241',
+  gray: '#e5e5e5',
   lightGray: '#f3f2f1',
   darkGray: '#595959',
+  warningRed: '#e63946',
 };

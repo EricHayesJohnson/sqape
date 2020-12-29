@@ -27,11 +27,19 @@ const PortfolioItem = ({ title, page, storyText }) => {
 const Portfolio = () => (
   <>
     <PortfolioItem
+      title="Laundry Day"
+      page="/laundryDay"
+      storyText="Keeping things simple, this prototype was imagined as a weather app that 
+      informs the user if today is a good day to do laundry. Originally it was built using the weatherstack 
+      api and the browsers geolocation but was then scaled back to use a toggle with hard coded values 
+      to simulate a new request."
+    />
+    <PortfolioItem
       title="Kitchen Timer"
       page="/kitchenTimer"
-      storyText="Modeled after an actual kitchen timer, it was chosen for its simple design 
+      storyText="Modeled after an actual kitchen timer, this piece was chosen for its simple design 
       and limited functionality. In order to get the site up and running quickly, I 
-      wanted the first component to be something relatively easy to design and implement. A timer is
+      wanted the first component to be relatively easy to design and implement. A timer is
       usually a good place to start."
     />
   </>
