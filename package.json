@@ -23,6 +23,8 @@
   "dependencies": {
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
+    "d3": "^6.3.1",
+    "d3blackbox": "^1.2.0",
     "gatsby": "^2.26.1",
     "gatsby-plugin-emotion": "^5.0.0",
     "gatsby-plugin-image": "^0.3.1",
