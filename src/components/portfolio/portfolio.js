@@ -27,6 +27,18 @@ const PortfolioItem = ({ title, page, storyText }) => {
 const Portfolio = () => (
   <>
     <PortfolioItem
+      title="Covid Graph"
+      page="/covidGraph"
+      storyText="I read somewhere that 2020 was the year data visualization entered the mainstream. 
+      If true, probably largely in part by everyone making covid related infographics. 
+      I too decided to dip my toes, but more than anything it was a reason to play around with D3. 
+      Since this was my first attempt at making a data visualization, I simply wanted to focus on using minimal 
+      data that could be interacted with.
+
+      *Data provided by The COVID Tracking Project API 
+"
+    />
+    <PortfolioItem
       title="Laundry Day"
       page="/laundryDay"
       storyText="Keeping things simple, this prototype was imagined as a weather app that 
