@@ -10,7 +10,11 @@ import { data } from '../../data/covid-data';
 const Axis = ({ x, y, scale, axisType, ticks, tickFormat }) => {
   const fnName = axisType === 'left' ? 'axisLeft' : 'axisBottom';
   const ref = useD3((el) => {
-    d3.select(el).call(d3[fnName](scale).ticks(ticks).tickFormat(tickFormat));
+    d3.select(el)
+      .call(
+        d3[fnName](scale).ticks(ticks).tickFormat(tickFormat).tickSizeInner(12),
+      )
+      .style('font-size', '12px');
   });
   return <g transform={`translate(${x}, ${y})`} ref={ref} />;
 };

@@ -14,6 +14,7 @@ const Slider = ({ min, max, value, onSliderChange }) => {
       max={max}
       value={value}
       onChange={handleChange}
+      aria-label="range slider"
     />
   );
 };

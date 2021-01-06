@@ -15,13 +15,16 @@ export const Title = styled.h1`
   font-weight: 400;
 `;
 export const Story = styled.div`
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 28px;
   color: ${color.black};
   background: ${color.lightGray};
   border-radius: ${size.s1};
   border: 1px solid ${color.black};
-  padding: ${size.s1};
-  width: 384px;
+  padding: ${size.s3} ${size.s2};
 `;
+export const AreaOfInterest = styled.div``;
 export const Button = styled.button`
   width: 50px;
   line-height: 1.5;
@@ -36,7 +39,7 @@ export const Button = styled.button`
   }
 `;
 export const ItemLink = {
-  color: `${color.lightGray}`,
+  color: `${color.black}`,
   fontSize: `${size.s3}`,
   textDecoration: 'none',
   fontWeight: 300,
