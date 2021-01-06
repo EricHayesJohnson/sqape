@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ToggleLabel, ToggleInput } from './styles';
 import { css } from '@emotion/react';
 
-const Toggle = ({ name, color, onChange }) => {
+const Toggle = ({ name, color, labelText, onChange }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
@@ -26,7 +26,9 @@ const Toggle = ({ name, color, onChange }) => {
           }
         `}
       />
-      <ToggleLabel htmlFor={name}></ToggleLabel>
+      <ToggleLabel htmlFor={name} aria-label={name}>
+        {labelText}
+      </ToggleLabel>
     </>
   );
 };
@@ -34,6 +36,7 @@ const Toggle = ({ name, color, onChange }) => {
 Toggle.propTypes = {
   name: PropTypes.string,
   color: PropTypes.string,
+  labelText: PropTypes.string,
   onChange: PropTypes.func,
 };
 

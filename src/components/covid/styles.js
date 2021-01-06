@@ -18,7 +18,7 @@ export const KeyDot = styled.div`
 `;
 export const Chart = styled.div`
   background: #f7fff7;
-  border: 2px solid ${color.black};
+  border: 1px solid ${color.black};
 `;
 export const drawLine = keyframes`
 from {

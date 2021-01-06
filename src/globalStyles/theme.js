@@ -3,8 +3,8 @@ export const size = {
   s2: '16px',
   s3: '24px',
   s4: '48px',
-  portfolioWidth: '400px',
-  headingWidth: '480px',
+  portfolioWidth: '500px',
+  headingWidth: '580px',
 };
 
 export const color = {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { ItemBody, Title, Button, Story, ItemLink } from './styles';
 
-const PortfolioItem = ({ title, page, storyText }) => {
+const PortfolioItem = ({ title, page, mainText, subText }) => {
   const [showStory, setShowStory] = useState(false);
 
   return (
@@ -18,7 +18,14 @@ const PortfolioItem = ({ title, page, storyText }) => {
             </Link>
           </div>
         </div>
-        {showStory ? <Story>{storyText}</Story> : null}
+        {showStory ? (
+          <Story>
+            <h3 style={{ margin: 0 }}>Summary</h3>
+            {mainText}
+            <h3 style={{ marginBottom: 0 }}>Area of interest</h3>
+            <div>{subText}</div>
+          </Story>
+        ) : null}
       </ItemBody>
     </>
   );
@@ -29,30 +36,28 @@ const Portfolio = () => (
     <PortfolioItem
       title="Covid Graph"
       page="/covidGraph"
-      storyText="I read somewhere that 2020 was the year data visualization entered the mainstream. 
-      If true, probably largely in part by everyone making covid related infographics. 
-      I too decided to dip my toes, but more than anything it was a reason to play around with D3. 
-      Since this was my first attempt at making a data visualization, I simply wanted to focus on using minimal 
-      data that could be interacted with.
-
-      *Data provided by The COVID Tracking Project API 
-"
+      mainText="I read somewhere that 2020 was the year data visualization entered the mainstream.
+      I imagine in part due to the coronavirus and the many infographics it produced. I decided to dip my toes, 
+      but more than anything wanted a reason to play around with D3. Data provided by The COVID Tracking Project API."
+      subText="How modifying the time range via the slider influences the interpretation of the data."
     />
     <PortfolioItem
       title="Laundry Day"
       page="/laundryDay"
-      storyText="Keeping things simple, this prototype was imagined as a weather app that 
-      informs the user if today is a good day to do laundry. Originally it was built using the weatherstack 
-      api and the browsers geolocation but was then scaled back to use a toggle with hard coded values 
-      to simulate a new request."
+      mainText="This prototype was imagined as a weather app that does one thing, informs the user on whether 
+      or not today is a good day to do laundry. Originally it was built using the weatherstack api and the browsers 
+      geolocation, but was later scaled back to use a toggle with hard coded values."
+      subText="Using common components to display information. i.e. using a progress bar to indicate cloud coverage 
+      and a loading spinner that resembles a washing machine in motion."
     />
     <PortfolioItem
       title="Kitchen Timer"
       page="/kitchenTimer"
-      storyText="Modeled after an actual kitchen timer, this piece was chosen for its simple design 
+      mainText="Modeled after an actual kitchen timer, it was chosen for its simple design 
       and limited functionality. In order to get the site up and running quickly, I 
       wanted the first component to be relatively easy to design and implement. A timer is
       usually a good place to start."
+      subText="How the reset functionality is completely intuitive when holding the physical device but unintuitive when on screen."
     />
   </>
 );
@@ -60,7 +65,8 @@ const Portfolio = () => (
 PortfolioItem.propTypes = {
   title: PropTypes.string,
   page: PropTypes.string,
-  storyText: PropTypes.string,
+  mainText: PropTypes.string,
+  subText: PropTypes.string,
 };
 
 export default Portfolio;

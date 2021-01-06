@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Global, css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { size, color } from '../globalStyles/theme';
+import { Helmet } from 'react-helmet';
 
 const Wrapper = styled('div')`
   width: 100vw;
@@ -46,20 +47,31 @@ const HomeLink = () => {
 
 const Layout = ({ children, name, hasHomeLink }) => {
   return (
-    <Wrapper>
-      <Global
-        styles={css`
-          body {
-            margin: 0;
-          }
-        `}
-      />
-      <HeaderWrapper>
-        {hasHomeLink ? HomeLink() : null}
-        <Title>{name}</Title>
-      </HeaderWrapper>
-      {children}
-    </Wrapper>
+    <>
+      <Helmet
+        htmlAttributes={{
+          lang: 'en',
+        }}
+      >
+        <title>prototypes</title>
+      </Helmet>
+      <div id="main" role="main">
+        <Wrapper>
+          <Global
+            styles={css`
+              body {
+                margin: 0;
+              }
+            `}
+          />
+          <HeaderWrapper>
+            {hasHomeLink ? HomeLink() : null}
+            <Title>{name}</Title>
+          </HeaderWrapper>
+          {children}
+        </Wrapper>
+      </div>
+    </>
   );
 };
 
