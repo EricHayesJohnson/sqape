@@ -1,6 +1,7 @@
 module.exports = {
   pathPrefix: '/sqape',
   plugins: [
+    'gatsby-plugin-sass',
     'gatsby-plugin-emotion',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
