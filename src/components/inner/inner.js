@@ -8,10 +8,29 @@ import {
   FadeInOut,
   Swipe,
   Input,
-  ButtonWrapper,
+  Wrapper,
   Button,
+  Text,
+  ReviewText,
+  Strike,
 } from './styles';
+import Toggle from '../toggle/toggle';
 import CustomSelect from '../customSelect/customSelect';
+
+const strikeThru = css`
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 6px;
+    margin-top: -24px;
+    background: #ff6262;
+    transform-origin: center left;
+    animation: ${Strike} 0.6s cubic-bezier(0.55, 0, 0.1, 1) 1;
+  }
+`;
 
 const LoadingAnimation = () => {
   return (
@@ -44,36 +63,61 @@ const LoadingAnimation = () => {
 
 const ScreenOne = (props) => {
   return (
-    <ButtonWrapper>
-      <Input
-        type="text"
-        placeholder="enter a goal"
-        value={props.goalValue}
-        onChange={props.setGoal}
-      />
-      <div style={{ width: '40px', height: '40px' }} />
-      <CustomSelect
-        placeholder="select a time frame"
-        options={['today', 'this week', 'this month']}
-        onSelectChange={props.setTime}
-      />
+    <>
+      <Wrapper>
+        <Input
+          type="text"
+          placeholder="Enter a goal"
+          value={props.goalValue}
+          onChange={props.setGoal}
+        />
+        <div style={{ width: '40px', height: '40px' }} />
+        <CustomSelect
+          placeholder="Select a time"
+          options={['Today', 'This week', 'This month']}
+          onSelectChange={props.setTime}
+        />
+      </Wrapper>
       <Button
         onClick={() => props.onButtonClick(2)}
         disabled={props.goalValue && props.timeValue ? false : true}
       >
         Continue
       </Button>
-    </ButtonWrapper>
+    </>
   );
 };
 
 const ScreenTwo = (props) => {
+  const [isComplete, setIsComplete] = useState(false);
   return (
-    <ButtonWrapper>
-      <div>{props.goalValue}</div>
-      <div>{props.timeValue}</div>
-      <Button>Share with inner circle</Button>
-    </ButtonWrapper>
+    <>
+      <Wrapper>
+        <Text>Your goal</Text>
+        <ReviewText css={isComplete ? '' : strikeThru}>
+          {props.goalValue}
+        </ReviewText>
+        <Text>Complete by</Text>
+        <ReviewText>{props.timeValue}</ReviewText>
+        <Text>Mark complete</Text>
+        <div style={{ alignSelf: 'end', marginTop: '8px' }}>
+          <Toggle color="#ff6262" onChange={() => setIsComplete(!isComplete)} />
+        </div>
+      </Wrapper>
+      <Button onClick={() => props.onButtonClick(3)} disabled={isComplete}>
+        Share
+      </Button>
+    </>
+  );
+};
+
+const ScreenThree = () => {
+  return (
+    <>
+      <Wrapper>
+        <Text>To be continued...</Text>
+      </Wrapper>
+    </>
   );
 };
 
@@ -95,9 +139,15 @@ const InnerApp = () => {
         />
       );
     } else if (screenNum === 2) {
-      return <ScreenTwo goalValue={goalValue} timeValue={timeValue} />;
-    } else {
-      return null;
+      return (
+        <ScreenTwo
+          onButtonClick={(newVal) => setScreenNum(newVal)}
+          goalValue={goalValue}
+          timeValue={timeValue}
+        />
+      );
+    } else if (screenNum === 3) {
+      return <ScreenThree />;
     }
   };
 

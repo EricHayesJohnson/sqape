@@ -35,10 +35,11 @@ export const RedDot = styled.div`
   opacity: 0;
   transform: translate3d(-274px, 0, 0);
 `;
-export const ButtonWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
+  height: 100%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-top: ${size.s4};
   width: 84%;
@@ -67,7 +68,8 @@ export const Input = styled.input`
 `;
 export const Button = styled.button`
   width: 300px;
-  margin-top: 265px;
+  align-self: end;
+  margin: 0 0 52px 32px;
   line-height: 1.5;
   font-weight: 400;
   color: white;
@@ -89,16 +91,37 @@ export const Button = styled.button`
   }
 }
 `;
+export const Text = styled.div`
+  color: ${appColors.red};
+  font-family: Helvetica Neue;
+  font-size: ${size.s3};
+  margin-top: ${size.s3};
+  align-self: end;
+`;
+export const ReviewText = styled.div`
+  color: ${appColors.grey};
+  font-family: Helvetica Neue;
+  font-size: ${size.s4};
+  align-self: end;
+`;
+export const Strike = keyframes`
+  from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+`;
 export const FadeInOut = keyframes`
-    0% {
-      opacity: 0;
-    }
-    80% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 `;
 export const Swipe = keyframes`
  0% {
