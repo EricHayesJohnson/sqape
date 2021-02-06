@@ -34,6 +34,15 @@ const PortfolioItem = ({ title, page, mainText, subText }) => {
 const Portfolio = () => (
   <>
     <PortfolioItem
+      title="Inner App"
+      page="/innerApp"
+      mainText="This is envisioned as a mobile app for setting short term goals that can be shared 
+      with a group of friends. The full functionality and design is incomplete but still serves as 
+      a context to design some user interactions and a custom option select menu. In addition 
+      this prototype was used as a means to explore some of the more advanced features of the Emotion library."
+      subText="Working in the confines of a mobile device fame and using animation to communicate direction."
+    />
+    <PortfolioItem
       title="Covid Graph"
       page="/covidGraph"
       mainText="I read somewhere that 2020 was the year data visualization entered the mainstream.
@@ -45,7 +54,7 @@ const Portfolio = () => (
       title="Laundry Day"
       page="/laundryDay"
       mainText="This prototype was imagined as a weather app that does one thing, informs the user on whether 
-      or not today is a good day to do laundry. Originally it was built using the weatherstack api and the browsers 
+      or not today is a good day to do laundry. Originally it was built using the weatherstack api and the browser's 
       geolocation, but was later scaled back to use a toggle with hard coded values."
       subText="Using common components to display information. i.e. using a progress bar to indicate cloud coverage 
       and a loading spinner that resembles a washing machine in motion."
