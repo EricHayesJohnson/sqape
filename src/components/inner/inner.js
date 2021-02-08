@@ -100,7 +100,7 @@ const ScreenTwo = (props) => {
         <Text>Complete by</Text>
         <ReviewText>{props.timeValue}</ReviewText>
         <Text>Mark complete</Text>
-        <div style={{ alignSelf: 'end', marginTop: '8px' }}>
+        <div style={{ alignSelf: 'start', marginTop: '8px' }}>
           <Toggle color="#ff6262" onChange={() => setIsComplete(!isComplete)} />
         </div>
       </Wrapper>

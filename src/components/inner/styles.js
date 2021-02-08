@@ -46,7 +46,7 @@ export const Wrapper = styled.div`
 `;
 export const Input = styled.input`
   width: 100%;
-  height: 62px;
+  height: 64px;
   box-sizing: border-box;
   margin-top: 32px;
   background-color: ${appColors.black};
@@ -55,7 +55,7 @@ export const Input = styled.input`
   font-family: Helvetica Neue;
   font-weight: 400;
   font-size: ${size.s3};
-  padding-left: 32px;
+  padding-left: 20px;
   color: ${appColors.grey};
   &::placeholder {
     color: ${appColors.grey};
@@ -67,16 +67,15 @@ export const Input = styled.input`
   }
 `;
 export const Button = styled.button`
-  width: 300px;
-  align-self: end;
-  margin: 0 0 52px 32px;
+  width: 84%;
+  margin-bottom: ${size.s3};
   line-height: 1.5;
   font-weight: 400;
   color: white;
   background-color: ${appColors.grey};
   border: 1px solid ${appColors.grey};
   border-radius: 10px;
-  padding: ${size.s1}; ${size.s2};;
+  padding: ${size.s1}; ${size.s2};
   cursor: pointer;
   font-size: ${size.s3};
   &:focus {
@@ -85,7 +84,7 @@ export const Button = styled.button`
   &:disabled {
     border: 1px solid #949494;
     background-color: #949494;
-    color: $dg-white;
+    color: white;
     cursor: default;
     opacity: 0.5;
   }
@@ -96,13 +95,13 @@ export const Text = styled.div`
   font-family: Helvetica Neue;
   font-size: ${size.s3};
   margin-top: ${size.s3};
-  align-self: end;
+  align-self: start;
 `;
 export const ReviewText = styled.div`
   color: ${appColors.grey};
   font-family: Helvetica Neue;
   font-size: ${size.s4};
-  align-self: end;
+  align-self: start;
 `;
 export const Strike = keyframes`
   from {
