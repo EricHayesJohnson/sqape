@@ -77,19 +77,19 @@
 }
 .arrow::before {
   left: -5px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   background-color: #c3c3c3;
 }
 .arrow::after {
   left: 5px;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
   background-color: #c3c3c3;
 }
 .open .arrow::before {
   left: -5px;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 .open .arrow::after {
   left: 5px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }

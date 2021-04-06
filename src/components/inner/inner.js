@@ -12,25 +12,8 @@ import {
   Button,
   Text,
   ReviewText,
-  Strike,
 } from './styles';
-import Toggle from '../toggle/toggle';
 import CustomSelect from '../customSelect/customSelect';
-
-const strikeThru = css`
-  position: relative;
-  &:after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 6px;
-    margin-top: -24px;
-    background: #ff6262;
-    transform-origin: center left;
-    animation: ${Strike} 0.6s cubic-bezier(0.55, 0, 0.1, 1) 1;
-  }
-`;
 
 const LoadingAnimation = () => {
   return (
@@ -89,24 +72,15 @@ const ScreenOne = (props) => {
 };
 
 const ScreenTwo = (props) => {
-  const [isComplete, setIsComplete] = useState(false);
   return (
     <>
       <Wrapper>
         <Text>Your goal</Text>
-        <ReviewText css={isComplete ? '' : strikeThru}>
-          {props.goalValue}
-        </ReviewText>
+        <ReviewText>{props.goalValue}</ReviewText>
         <Text>Complete by</Text>
         <ReviewText>{props.timeValue}</ReviewText>
-        <Text>Mark complete</Text>
-        <div style={{ alignSelf: 'start', marginTop: '8px' }}>
-          <Toggle color="#ff6262" onChange={() => setIsComplete(!isComplete)} />
-        </div>
       </Wrapper>
-      <Button onClick={() => props.onButtonClick(3)} disabled={isComplete}>
-        Share
-      </Button>
+      <Button onClick={() => props.onButtonClick(1)}>Go back</Button>
     </>
   );
 };
