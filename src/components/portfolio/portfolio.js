@@ -36,11 +36,11 @@ const Portfolio = () => (
     <PortfolioItem
       title="Inner App"
       page="/innerApp"
-      mainText="This is envisioned as a mobile app for setting short term goals that can be shared 
-      with a group of friends. The full functionality and design is incomplete but still serves as 
-      a context to design some user interactions and a custom option select menu. In addition 
-      this prototype was used as a means to explore some of the more advanced features of the Emotion library."
-      subText="Working in the confines of a mobile device fame and using animation to communicate direction."
+      mainText="This was envisioned as the start screen of a mobile app for setting short term goals. 
+      The functionality and design are incomplete but serve as a context to develop the custom 
+      drop-down menu which was my primary focus. This prototype was also used to explore some 
+      of the more advanced features of the Emotion library."
+      subText="Working in the confines of a mobile device frame and the custom drop-down component."
     />
     <PortfolioItem
       title="Covid Graph"
@@ -66,7 +66,7 @@ const Portfolio = () => (
       and limited functionality. In order to get the site up and running quickly, I 
       wanted the first component to be relatively easy to design and implement. A timer is
       usually a good place to start."
-      subText="How the reset functionality is completely intuitive when holding the physical device but unintuitive when on screen."
+      subText="How the reset functionality is intuitive when holding the physical device in hand but unintuitive when on screen."
     />
   </>
 );
